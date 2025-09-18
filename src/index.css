@@ -1,0 +1,47 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#0b0d10; color:#e7e9ee; }
+.wrap { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+
+.topbar { display:flex; align-items:center; gap:12px; }
+.topbar h1 { margin:0; font-size: 24px; }
+.spacer { flex:1; }
+
+.tabs { display:grid; grid-template-columns: repeat(6, 1fr); gap:6px; margin:16px 0; }
+.tab { background:#151922; border:1px solid #212633; padding:10px; color:#cfd6e4; cursor:pointer; border-radius:8px; }
+.tab.active { background:#1e2635; color:#fff; border-color:#2f3a4f; }
+
+.card { border:1px solid #212633; background:#111522; border-radius:12px; }
+.card-head { padding:12px 16px; border-bottom:1px solid #212633; font-weight:600; }
+.card-body { padding:16px; }
+
+.panel { border:1px solid #212633; border-radius:10px; padding:12px; margin:10px 0; background:#0f1421; }
+
+.row { display:flex; align-items:center; }
+.col { display:flex; flex-direction:column; }
+.wrap .wrap { flex-wrap: wrap; }
+.gap { gap:8px; }
+.s { font-size: 14px; }
+.small { font-size: 12px; }
+.center { text-align:center; }
+.right { text-align:right; }
+.muted { color:#9aa7bd; }
+
+.btn { background:#26334a; border:1px solid #33435f; color:#e7e9ee; padding:8px 12px; border-radius:8px; cursor:pointer; }
+.btn:hover { filter:brightness(1.1); }
+.btn.secondary { background:#2a2f3a; border-color:#3b4351; }
+.btn.primary { background:#2652cf; border-color:#315fe1; }
+.btn.danger { background:#7c1f1f; border-color:#9a2a2a; }
+.link { background:none; border:none; color:#84a7ff; cursor:pointer; text-decoration:underline; }
+
+.table { width:100%; border-collapse: collapse; }
+.table th, .table td { padding:8px 6px; border-bottom:1px solid #1f2736; text-align:left; }
+.table th { color:#a9b6cd; font-weight:600; }
+
+.textarea, input, select, textarea { width:auto; background:#0f1421; color:#e7e9ee; border:1px solid #27324a; border-radius:8px; padding:8px; }
+input.w150 { width:150px; }
+input.w100 { width:100px; }
+input.w200 { width:200px; }
+
+.grid { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:10px; }
+.grid .full { grid-column: 1 / -1; }
+.grid label { display:flex; flex-direction:column; gap:6px; font-size:14px; color:#c2c9d6; }
