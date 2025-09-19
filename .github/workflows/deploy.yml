@@ -1,21 +1,31 @@
-name: Deploy to GitHub Pages (gh-pages branch)
+name: Deploy to GitHub Pages (gh-pages)
 
 on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: write   # <-- krävs för att kunna pusha till gh-pages
+
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install
+
+      # installera – prova ci först, fall tillbaka till install
+      - run: npm ci || npm install
+
       - run: npm run build
+
       - name: Publish to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: true   # skapar ren gh-pages första gången
